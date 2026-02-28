@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dott.ssa Francesca Petrolo - Psicologa Sistemico-Relazionale Roma</title>
+    <meta name="description" content="Dott.ssa Francesca Petrolo, Psicologa dello Sviluppo a Roma Eur. Approccio Sistemico-Relazionale per individui, coppie e famiglie. Riscrivi la tua storia relazionale.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #A3B899;
+            --secondary-color: #D4E2D4;
+            --background-color: #F9F9F9;
+            --text-color: #333333;
+            --header-footer-bg: #E8F0E8;
+            --font-family: 'Montserrat', sans-serif;
+            --whatsapp-color: #25D366;
+            --instagram-color: #E4405F;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.8;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo h1 { font-size: 1.4rem; color: var(--text-color); margin: 0; }
+        .logo p { font-size: 0.85rem; color: var(--primary-color); font-weight: 600; text-transform: uppercase; }
+
+        .nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        .nav a { text-decoration: none; color: var(--text-color); font-weight: 600; transition: 0.3s; font-size: 0.9rem; }
+        .nav a:hover { color: var(--primary-color); }
+
+        /* Hero */
+        #hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(212, 226, 212, 0.8)), url('https://images.unsplash.com/photo-1516302752625-fbbad370595d?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content h2 { font-size: 2.8rem; margin-bottom: 1rem; color: #2c3e50; }
+        .hero-content p { font-size: 1.3rem; font-style: italic; color: #444; }
+
+        /* Sections */
+        .content-section, .content-section-light { padding: 5rem 0; }
+        .content-section-light { background-color: #fff; }
+        .section-title { text-align: center; margin-bottom: 3.5rem; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary-color); position: relative; padding-bottom: 12px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--secondary-color); }
+
+        /* Chi Sono */
+        .about-layout { display: flex; align-items: flex-start; gap: 4rem; }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img { width: 100%; border-radius: 30px 0 30px 0; box-shadow: 20px 20px 0px var(--secondary-color); }
+        .about-text { flex: 2; }
+
+        /* Focus sul Metodo */
+        .metodo-box {
+            background-color: var(--header-footer-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+            border-left: 8px solid var(--primary-color);
+        }
+        .metodo-box h3 { color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.6rem; }
+        .metodo-box blockquote { font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem; color: #555; border-left: none; padding: 0; }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .grid-item { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+
+        /* Mappa & Contatti */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .map-frame { height: 400px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn { padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 10px; width: 100%; justify-content: center; transition: 0.3s; }
+        .btn-email { background-color: var(--primary-color); }
+        .btn-whatsapp { background-color: var(--whatsapp-color); }
+        .btn-insta { background-color: var(--instagram-color); }
+
+        footer { background: var(--header-footer-bg); padding: 4rem 0; text-align: center; }
+
+        @media(max-width: 850px) {
+            .about-layout, .contact-wrapper { grid-template-columns: 1fr; flex-direction: column; }
+            .hero-content h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Dott.ssa Francesca Petrolo</h1>
+                <p>Psicologa dello Sviluppo</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#chi-sono">Chi sono</a></li>
+                    <li><a href="#metodo">Il Metodo</a></li>
+                    <li><a href="#aree-intervento">Ambiti</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <h2>Accogliere, Comprendere, Trasformare</h2>
+                <p>"Ogni sintomo è un messaggio che aspetta di essere decodificato."</p>
+            </div>
+        </section>
+
+        <section id="chi-sono" class="content-section-light">
+            <div class="container">
+                <div class="section-title"><h2>Chi sono</h2></div>
+                <div class="about-layout">
+                    <div class="about-image">
+                        <img src="foto-francesca-petrolo.jpeg" alt="Dott.ssa Francesca Petrolo">
+                    </div>
+                    <div class="about-text">
+                        <p>Sono la <strong>Dott.ssa Francesca Petrolo</strong>, Psicologa dello Sviluppo iscritta all’Ordine degli Psicologi del Lazio (n. 25612) e specializzanda in Psicoterapia Sistemico-Relazionale presso l'Istituto Dedalus di Roma.</p>
+                        <p>La mia formazione affonda le radici in esperienze cliniche significative, come il tirocinio professionalizzante presso l'<strong>Ospedale Sant'Andrea</strong> e il Master in <strong>Disturbi Specifici dell'Apprendimento (DSA)</strong> presso l'Istituto Galton.</p>
+                        <p>Ma oltre i titoli, ciò che guida il mio lavoro è la passione per le storie umane e la convinzione che il benessere nasca dalla qualità delle nostre relazioni.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo" class="content-section">
+            <div class="container">
+                <div class="section-title"><h2>Il mio Approccio</h2></div>
+                <div class="section-content">
+                    <div class="metodo-box">
+                        <blockquote>"Nessun individuo è un'isola. Siamo tutti nodi di una rete fitta di relazioni che ci definiscono e ci influenzano."</blockquote>
+                        <h3>L'Approccio Sistemico-Relazionale</h3>
+                        <p>Il mio metodo di lavoro non guarda mai al sintomo come a un problema isolato dell'individuo, ma come a un <strong>messaggio</strong> che parla del sistema di cui facciamo parte: la famiglia, la coppia, il contesto sociale.</p>
+                        <p><strong>Cosa facciamo insieme in terapia?</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 1rem;">
+                            <li><strong>Decodifichiamo i Copioni:</strong> Esploriamo gli schemi relazionali che ripeti inconsciamente e che spesso generano sofferenza.</li>
+                            <li><strong>Riscriviamo le Storie:</strong> Ti aiuto a guardare il tuo passato e il tuo presente con lenti nuove, trasformando il "giudizio" in "significato".</li>
+                            <li><strong>Trasformiamo i Legami:</strong> Lavoriamo per costruire modalità di stare con gli altri che siano più autentiche, libere e consapevoli.</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;">In questo spazio, non cerchiamo il "colpevole", ma cerchiamo il <strong>senso</strong> di ciò che accade, per aprire nuove possibilità di cambiamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="aree-intervento" class="content-section-light">
+            <div class="container">
+                <div class="section-title"><h2>Ambiti di intervento</h2></div>
+                <div class="grid">
+                    <div class="grid-item">
+                        <h4>Individui</h4>
+                        <p>Ansia, blocchi emotivi, senso di colpa, vergogna e percorsi di crescita personale.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Coppie</h4>
+                        <p>Crisi relazionali, gestione dei conflitti e difficoltà nella comunicazione.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Famiglie</h4>
+                        <p>Sostegno alla genitorialità, dinamiche familiari complesse e adolescenza.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>DSA e Sviluppo</h4>
+                        <p>Supporto specialistico per i disturbi dell'apprendimento e lo sviluppo tipico/atipico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti" class="content-section">
+            <div class="container">
+                <div class="section-title"><h2>Contatti e Studio</h2></div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem;">📍 <strong>Via dell'Arcadia, 1 - 00147 Roma</strong><br><small>(Zona Eur / Montagnola)</small></p>
+                        <a href="mailto:dott.ssapetrolof@gmail.com" class="btn btn-email">📧 dott.ssapetrolof@gmail.com</a>
+                        <a href="https://wa.me/393459275494" class="btn btn-whatsapp">💬 Messaggio WhatsApp</a>
+                        <a href="https://www.instagram.com/psicologapetrolofrancesca" target="_blank" class="btn btn-insta">📸 Seguimi su Instagram</a>
+                    </div>
+                    <div class="map-frame">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.956667500593!2d12.4939023765561!3d41.85073096645362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258a5e38605555%3A0x8e87d00f7b0f69a!2sVia%20dell'Arcadia%2C%201%2C%2000147%20Roma%20RM!5e0!3m2!1sit!2sit!4v1709100000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Dott.ssa Francesca Petrolo</strong> | Psicologa dello Sviluppo</p>
+            <p>Iscr. Ordine Psicologi Lazio N. 25612 | P.IVA 00000000000</p>
+            <div style="margin-top: 2rem;">
+                <a href="#">Privacy Policy</a> | <a href="#hero">Torna su ↑</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
