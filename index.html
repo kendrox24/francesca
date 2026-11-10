@@ -69,11 +69,30 @@
         .section-title h2 { font-size: 2.2rem; color: var(--primary-color); position: relative; padding-bottom: 12px; }
         .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--secondary-color); }
 
-        /* Chi Sono */
-        .about-layout { display: flex; align-items: flex-start; gap: 4rem; }
-        .about-image { flex: 1; min-width: 300px; }
-        .about-image img { width: 100%; border-radius: 30px 0 30px 0; box-shadow: 20px 20px 0px var(--secondary-color); }
-        .about-text { flex: 2; }
+        /* Chi Sono (Corretto per dimensionare la foto) */
+        .about-layout { 
+            display: flex; 
+            align-items: center; 
+            gap: 4rem; 
+        }
+        .about-image { 
+            flex: 0 0 300px; /* Larghezza fissa su desktop per non farla ingigantire */
+            max-width: 300px; 
+        }
+        .about-image img { 
+            width: 100%; 
+            max-height: 400px;
+            object-fit: cover; /* Mantiene le proporzioni senza deformare la foto */
+            border-radius: 30px 0 30px 0; 
+            box-shadow: 15px 15px 0px var(--secondary-color); 
+            display: block;
+        }
+        .about-text { 
+            flex: 1; 
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+        }
 
         /* Focus sul Metodo */
         .metodo-box {
@@ -101,7 +120,16 @@
         footer { background: var(--header-footer-bg); padding: 4rem 0; text-align: center; }
 
         @media(max-width: 850px) {
-            .about-layout, .contact-wrapper { grid-template-columns: 1fr; flex-direction: column; }
+            .about-layout, .contact-wrapper { 
+                grid-template-columns: 1fr; 
+                flex-direction: column; 
+                gap: 2.5rem;
+            }
+            .about-image {
+                flex: auto;
+                max-width: 260px; /* Ancora più compatta su cellulare */
+                margin: 0 auto;   /* Centrata su schermo piccolo */
+            }
             .hero-content h2 { font-size: 2rem; }
         }
     </style>
@@ -138,7 +166,8 @@
                 <div class="section-title"><h2>Chi sono</h2></div>
                 <div class="about-layout">
                     <div class="about-image">
-                     <img src="profilo.jpg" alt="Dott.ssa Francesca Petrolo">
+                        <img src="profilo.jpg" alt="Dott.ssa Francesca Petrolo">
+                    </div> <!-- Tag di chiusura aggiunto qui -->
                     <div class="about-text">
                         <p>Sono la <strong>Dott.ssa Francesca Petrolo</strong>, Psicologa Sistemica Relazionale iscritta all’Ordine degli Psicologi del Lazio (n. 25612) e specializzanda in Psicoterapia Sistemico-Relazionale presso l'Istituto Dedalus di Roma.</p>
                         <p>La mia formazione affonda le radici in esperienze cliniche significative, come il tirocinio professionalizzante presso l'<strong>Ospedale Sant'Andrea</strong> e il Master in <strong>Disturbi Specifici dell'Apprendimento (DSA)</strong> presso l'Istituto Galton.</p>
